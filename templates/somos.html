@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Somos{% endblock %}
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/QUIENES-SOMOS.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+ 
+{% block contenido %}
+<br><br>
+
+<article align="center">
+<h1>LOS FERNANDEZ S.A.</h1>
+
+<p> Somos una empresa Importadora y comercializadora de bebidas alcoholicas de calidad premiun.  Estamos íntegramente comprometidos con nuestros clientes en brindarle el mejor servicio posible. Transmitiendo de esta manera a nuestros clientes la garantía, confianza y calidad de nuestros productos a precios muy competitivos.</p>
+<br>
+<h2>Misión</h2>
+
+<p>Brindar calidad, garantía, facilidad y bienestar mediante un servicio de excelente calidad para nuestros clientes, así el como el cumplimiento a nuestros proveedores y bienestar de nuestros colaboradores.</p>
+<br>
+<h2>Visión</h2>
+
+<p>Ser una empresa reconocida que trabaja con honestidad y diligencia brindando productos de calidad y ser la primera opción en su necesidad.</p>
+
+</article>
+<br><br>
+<img style="margin: auto; display: block;" src="{% static 'img/SOMOS.jpg' %}"
+width=80%
+heigth=auto>
+
+<br><br>
+
+{% endblock %}

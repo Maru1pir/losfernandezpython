@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Distribuidores{% endblock %}
+
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/DISTRIBUIDORES.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+
+
+{% block contenido %} 
+<br><br><br>
+
+
+<ul id="distribuidor">
+		{% for a in distribuidor %}
+
+			<li style="display: inline-block;">
+				<img class="imadistribuidor" src="{{a.foto.url}}">
+				<p>Nombre: {{a.nombre}}</p>
+				<p>Dirección: {{a.direccion}}</p>
+				<p>Web: {{a.sitioweb}}</p>
+				<p>Email: {{a.email}}</p>
+
+			</li>
+
+		{% endfor %}
+</ul>
+
+
+{% endblock %}
+

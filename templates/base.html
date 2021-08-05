@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset="utf-8">
+	<title>{% block titulo %} {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	<link rel="shortcut icon" type="" href="{% static 'img/LOGO.png' %}">
+</head>
+<body>
+	<header>
+		<h1 align="center">{% block cabecera %} {% endblock %}</h1>
+		<nav>
+			<ul>
+				<li><a href="{% url 'inicio' %}">Inicio</a></li>
+				<li><a href="{% url 'productos' %}">Productos</a></li>
+				<li><a href="{% url 'distribuidores' %}">Distribuidores</a></li>
+				<li><a href="{% url 'somos' %}">¿Quienes Somos?</a></li>
+				<li><a href="{% url 'contacto' %}">Contacto</a></li>
+				{% if request.user.is_anonymous %}
+					<li><a href="{% url 'registro' %}">Registro</a></li>
+					<li><a href="{% url 'ingresar' %}">Ingresar</a></li>
+				{% else %}
+					<li><a href="{% url 'salir' %}">Salir</a></li>
+				{% endif %}
+			</ul>
+		</nav>
+		<br><br>
+		<form id="busqueda" method="get" action="/buscar/">
+			<label>Encontrá productos, marcas y más:</label>
+			<input type="text" name="busqueda">
+			<input type="submit" value="Buscar">
+			{% if request.user.is_authenticated %}
+				<p>Usuario identificado: {{request.user.username|upper}}</p>
+			{% else %}
+				<p>Usuario anónimo</p>
+			{% endif %}
+		</form>
+	</header>
+	<content>
+		{% block contenido %} {% endblock %}
+	</content>
+	<br><br><br><br>
+	<footer>
+		<p>Proyecto de fin de curso Programador Python &copy; 2021</p>
+	</footer>
+</body>
+</html>

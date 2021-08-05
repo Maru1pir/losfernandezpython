@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}404{% endblock %}
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/TITULO404.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+
+{% block contenido %}
+
+<br><br>
+
+<p align='center'; style="font-size:46px;">Página no encontrada</p>
+
+<img style="margin: auto; display: block;" src="{% static 'img/ERROR404.jpg' %}">
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Resultados{% endblock %}
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/BUSQUEDA.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+ 
+{% block contenido %}
+<br><br>
+
+<p>Su búsqueda arroja los siguientes resultados:{{bebidas|length}} </p>
+
+{% if bebidas %}
+
+
+	<ul style="display: inline-block;">
+		{% for a in bebidas %}
+
+			<li style="display: inline-block;">
+				<img class="imabebidas" src="{{a.foto.url}}">
+				<p style="width: 320px; height: 45px;">Descripcion: {{a.descripcion}}</p>
+				<p>Distribuidor: {{a.distribuidor}}</p>
+			</li>
+
+		{% endfor %}
+	</ul>
+
+{% else %}
+
+	<p>Su búsqueda no arroja resultados</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Productos{% endblock %}
+
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/PRODUCTOS.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+
+
+
+{% block contenido %} 
+<br><br><br>
+
+<ul style="display: inline-block;">
+		{% for a in bebidas %}
+
+			<li style="display: inline-block;">
+				<img class="imabebidas" src="{{a.foto.url}}">
+				<p style="width: 320px; height: 45px;">Descripcion: {{a.descripcion}}</p>
+				<p>Distribuidor: {{a.distribuidor}}</p>
+				<p>Origen: {{a.origen}}</p>
+				<p>Stock: {{a.stock}}</p>
+				<p style="font-size: 200%;">{{a.precio}}</p>
+
+			</li>
+
+		{% endfor %}
+</ul>
+
+
+{% endblock %}
+

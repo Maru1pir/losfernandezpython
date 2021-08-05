@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}Falló{% endblock %}
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/CORREONOENVIADO.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+
+{% block contenido %}
+
+<br><br>
+
+<p align="center">El correo no fue enviado correctamente, por favor intente más tarde</P>
+
+<img style="margin: auto; display: block;" src="{% static 'img/THUMB-DOWN.png' %}">
+
+{% endblock %}

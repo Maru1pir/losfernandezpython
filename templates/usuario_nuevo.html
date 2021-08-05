@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block titulo %}Registro{% endblock %}
+
+{% block cabecera %}<img style="margin: auto; display: block;" src="{% static 'img/USUARIONUEVO.jpg' %}"
+width=80%
+height=auto>{% endblock %}
+
+
+{% block contenido %}
+<br><br><br>
+
+<form id="formulario" method="post" action>{% csrf_token %}
+
+	{% for campo in formulario %}
+
+		<p>
+			{{campo.label_tag}}<br>
+
+			{{campo}}<br><br>
+			
+			{% for error in campo.errors %}
+				{{error}}
+			{% endfor%}
+		</p>
+
+	{% endfor%}
+	
+	<p><input type="submit" value="Registrarse"></p>
+
+</form>
+
+{% endblock %}
